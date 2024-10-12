@@ -40,7 +40,7 @@ module "ecs_nginx_service" {
     Environment = "Production"
     Project     = "ECS Nginx"
   }
-}```
+}
 
 ### **Variables**
 
@@ -66,16 +66,17 @@ module "ecs_nginx_service" {
 Deploying the Module
 
 To deploy this module, ensure that you’ve initialized Terraform in your working directory:
-    ```
+    ```bash
     terraform init
-    terraform apply ```
+    terraform apply
 
 Terraform will set up an ECS cluster, create a task definition for NGINX, and deploy the service behind an Application Load Balancer. Once deployed, the NGINX service can be accessed via the ALB DNS name, which is output at the end of the Terraform run.
 
 Testing the Deployment
 
 After deployment, you can test the ECS service by navigating to the DNS name of the ALB in your browser:
-    ```http://<alb-dns-name>```
+    ```bash
+    http://<alb-dns-name>
 
 You should see the default NGINX welcome page, indicating that the service is up and running.
 
